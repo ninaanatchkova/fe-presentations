@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Combinators and Specificity</title>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="title-slide">
+    <h1 class="presentation-title">CSS Combinators and Specificity</h1>
+  </div>
+  <section class="slides">
+    <article>
+      <h2>CSS Selectors</h2>
+      <div class="layout two-cols">
+        <ul class="bullet-points">
+          <li>In CSS, selectors are patterns used to select the elements to be styled</li>
+          <li>Elements can be selected by <strong>tag</strong>, <strong>class</strong>, <strong>id</strong>, <strong>attribute</strong></li>
+          <li>Elements can also be targeted through the <strong>pseudo-class</strong> and <strong>pseudo-element</strong> selectors or using the <strong>universal selector</strong></li>
+          <li>An element can be accessed through a <strong>combination</strong> of selectors</li>
+        </ul>
+        <div class="visual">
+          <p><code class="primary">div</code></p>
+          <p><code class="primary">.transaction</code></p>
+          <p><code class="primary">#tab-1</code></p>
+          <p><code class="primary">[type="text"]</code></p>
+          <p><code class="primary">button:hover</code></p>
+          <p><code class="primary">p::first-letter</code></p>
+          <p><code class="primary">*</code></p>
+        </div>
+      </div>
+    </article>
+    <article>
+      <h2>Selector list</h2>
+      <div class="layout two-cols">
+        <ul class="bullet-points">
+          <li>The selector list is a group of selectors separated by comma</li>
+          <li>It is not considered to be a combinator</li>
+          <li>The same rules apply to all elements that match at least one of the selectors</li>
+        </ul>
+        <div class="visual">
+          <code class="code-snippet"><span class="primary">h1, h2, h3</span> {<br>
+            &nbsp;&nbsp;<span class="secondary">color:</span> fuchsia;<br>
+          }</code>
+        </div>
+      </div>
+    </article>
+    <article>
+      <h2>Multiple selectors</h2>
+      <div class="layout two-cols">
+        <ul>
+          <li>Selects elements that match all of the selectors listed</li>
+          <li>Not considered to be a combinator</li>
+          <div class="visual"></div>
+        </ul>
+        <div class="visual">
+            <code class="code-snippet"><span class="primary">.tab</span> {<br>
+              &nbsp;&nbsp;<span class="secondary">text-transform:</span> uppercase;<br>
+            }</code><br>
+            <code class="code-snippet"><span class="primary">.tab.active</span> {<br>
+              &nbsp;&nbsp;<span class="secondary">border-bottom:</span> 2px solid fuchsia;<br>
+            }</code>
+        </div>
+      </div>
+    </article>
+    <article>
+      <h2>Descendant combinator</h2>
+      <div class="layout two-cols">
+        <ul>
+          <li>Combinator selectors combine two selectors</li>
+          <li>The descendant combinator is a white space</li>
+          <li>Selects any element matching the second selector that is a descendant of an element matching the first selector</li>
+          <div class="visual"></div>
+        </ul>
+        <div class="visual">
+          <code class="code-snippet small-text">
+            &lt;<span class="primary">div</span> <span class="secondary">class</span>=“articles”&gt;<br>
+            &nbsp;&nbsp;&lt;<span class="primary">article</span>&gt;<br>
+            <span class="highlight">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="primary">h1</span>&gt;…&lt;/<span class="primary">h1</span>&gt;<br></span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="primary">p</span>&gt;…&lt;/<span class="primary">p</span>&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;…<br>
+            &nbsp;&nbsp;&lt;/<span class="primary">article</span>&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;…<br>
+            &lt;/<span class="primary">div</span>&gt;
+          </code><br><br>
+          <code class="code-snippet small-text"><span class="primary">.articles h1</span> {<br>
+            &nbsp;&nbsp;<span class="secondary">font-size:</span> 4rem;<br>
+          }</code>
+        </div>
+      </div>
+    </article>
+    <article>
+      <h2>Child combinator</h2>
+      <div class="layout two-cols">
+      <ul>
+        <li>The direct child combinator is <strong>&gt;</strong></li>
+        <li>Selects any element matching the second selector that is a direct child of an element matching the first selector</li>
+        <li>Stricter than the descendant selector</li>
+        <div class="visual"></div>
+      </ul>
+      <div class="visual">
+          <code class="code-snippet small-text">
+            &lt;<span class="primary">div</span> <span class="secondary">class</span>=“articles”&gt;<br>
+            &nbsp;&nbsp;&lt;<span class="primary">article</span>&gt;<br>
+            <span class="highlight">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="primary">h1</span>&gt;…&lt;/<span class="primary">h1</span>&gt;<br></span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="primary">p</span>&gt;…&lt;/<span class="primary">p</span>&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;…<br>
+            &nbsp;&nbsp;&lt;/<span class="primary">article</span>&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;…<br>
+            &lt;/<span class="primary">div</span>&gt;
+          </code><br><br>
+          <code class="code-snippet small-text"><span class="primary">article</span> > <span class="primary">h1</span> {<br>
+            &nbsp;&nbsp;<span class="secondary">font-size:</span> 4rem;<br>
+          }</code>
+        </div>
+      </div>
+    </article>
+    <article>
+      <h2>Adjacent sibling combinator</h2>
+      <div class="layout two-cols">
+        <ul>
+          <li>The adjacent sibling combinator is <strong>+</strong></li>
+          <li>Selects any element matching the second selector that is the next sibling of an element matching the first selector</li>
+        </ul>
+        <div class="visual">
+            <code class="code-snippet small-text">
+              &lt;<span class="primary">div</span> <span class="secondary">class</span>=“articles”&gt;<br>
+              &nbsp;&nbsp;&lt;<span class="primary">article</span>&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="primary">img</span> <span class="secondary">src</span>="…"&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="primary">h1</span>&gt;…&lt;/<span class="primary">h1</span>&gt;<br>
+              <span class="highlight">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="primary">p</span>&gt;…&lt;/<span class="primary">p</span>&gt;<br></span>
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="primary">p</span>&gt;…&lt;/<span class="primary">p</span>&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;…<br>
+              &nbsp;&nbsp;&lt;/<span class="primary">article</span>&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;…<br>
+              &lt;/<span class="primary">div</span>&gt;
+            </code><br><br>
+            <code class="code-snippet small-text"><span class="primary">h1</span> + <span class="primary">p</span> {<br>
+              &nbsp;&nbsp;<span class="secondary">color:</span> grey;<br>
+            }</code>
+          </div>
+      </div>
+    </article>
+    <article>
+      <h2>General sibling combinator</h2>
+      <div class="layout two-cols">
+        <ul>
+          <li>The general sibling combinator is <strong>~</strong></li>
+          <li>Selects any element matching the second selector that is one of the next siblings of an element matching the first selector</li>
+          <div class="visual"></div>
+        </ul>
+        <div class="visual">
+            <code class="code-snippet small-text">
+              &lt;<span class="primary">div</span> <span class="secondary">class</span>=“articles”&gt;<br>
+              &nbsp;&nbsp;&lt;<span class="primary">article</span>&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="primary">img</span> <span class="secondary">src</span>="…"&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="primary">h1</span>&gt;…&lt;/<span class="primary">h1</span>&gt;<br>
+              <span class="highlight">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="primary">p</span>&gt;…&lt;/<span class="primary">p</span>&gt;<br></span>
+              <span class="highlight">&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="primary">p</span>&gt;…&lt;/<span class="primary">p</span>&gt;<br></span>
+              &nbsp;&nbsp;&nbsp;&nbsp;…<br>
+              &nbsp;&nbsp;&lt;/<span class="primary">article</span>&gt;<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;…<br>
+              &lt;/<span class="primary">div</span>&gt;
+            </code><br><br>
+            <code class="code-snippet small-text"><span class="primary">h1</span> ~ <span class="primary">p</span> {<br>
+              &nbsp;&nbsp;<span class="secondary">color:</span> grey;<br>
+            }</code>
+          </div>
+      </div>
+    </article>
+    <article>
+      <h2>Lobotomized owl example</h2>
+      <div class="layout two-cols">
+        <ul>
+          <li>Use case: create vertical spacing between stacked elements</li>
+          <li>Solution: attach margin-top to each element that follows another element</li>
+          <li>Lobotomized owl: <code><span class="primary">*</span> + <span class="primary">*</span> { }</code></li>
+          <li>Source: <a href="https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/">A List Apart</a></li>
+        </ul>
+        <div class="images">
+          <img src="assets/lobotomized_owl.png" alt="">
+        </div>
+      </div>
+    </article>
+    <article>
+      <h2>Specificity</h2>
+      <div class="layout two-cols"></div>
+      <ul>
+        <li>Specificity is the weight that is applied to a given CSS declaration</li>
+        <li>CSS calculates specificity based on the selectors used in the declaration block</li>
+        <li>Each type of selector has a given weight</li>
+        <li>
+          <ul>
+            <li><span class="secondary">0</span>: universal selector and inherited values</li>
+            <li><span class="secondary">1</span>: tag selector and pseudo-element selector</li>
+            <li><span class="secondary">10</span>: class and pseudo-class selector</li>
+            <li><span class="secondary">100</span>: id selector</li>
+            <li><span class="secondary">1000</span>: inline styles</li>
+            <li><span class="secondary">10000</span>: <code class="primary">!important</code></li>
+          </ul>
+        </li>
+        <li><a href="https://specificity.keegan.st/">Specificity calculator</a></li>
+        <div class="visual"></div>
+      </ul>
+    </article>
+  </section>
+  <script src="scripts.js"></script>
+</body>
+</html>

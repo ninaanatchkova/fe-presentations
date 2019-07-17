@@ -1,0 +1,92 @@
+body, h1, h2, ul {
+  margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 24px;
+  --primary-color: mediumblue;
+  --secondary-color: salmon;
+}
+
+body {
+  background: lightgoldenrodyellow;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+code {
+  line-height: 2rem;
+}
+
+/* HELPERS -------------------- */
+.primary {
+  color: var(--primary-color);
+}
+
+.secondary {
+  color: var(--secondary-color);
+}
+
+.highlight {
+  background-color: moccasin;
+}
+
+.small-text {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+/* SLIDES --------------------- */
+
+.title-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title-slide,
+.slides article {
+  height: 90vh;
+  width: 90vw;
+  margin: 5vh 5vw;
+  padding: 5vh 5vw;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.136917);
+}
+
+.slides ul {
+  padding-left: 1rem;
+  margin-right: 1rem;
+}
+
+.slides li {
+  margin: 0.75rem 0;
+  line-height: 1.25rem;
+}
+
+.layout {
+  display: grid;
+}
+
+.two-cols {
+  grid-template-columns: 2fr 1fr;
+  grid-column-gap: 1rem;
+}
+
+.images img {
+  max-width: 100%;
+}
