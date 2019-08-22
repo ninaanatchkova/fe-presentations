@@ -1,0 +1,116 @@
+body, h1, h2, ul {
+  margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 24px;
+  --primary-color: mediumblue;
+  --secondary-color: salmon;
+  --illustration-color-1: royalblue;
+  --illustration-color-2: pink;
+  --background-color: lightgoldenrodyellow;
+  --text-color: rgba(0,0,0,0.88);
+  --secondary-text-color: rgba(0,0,0,0.64);
+}
+
+body {
+  background-color: var(--background-color);
+  padding: 2.5vw;
+}
+
+section {
+  background-color: white;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.136917);
+}
+
+section h2 {
+  margin-bottom: 1rem;
+}
+
+section li {
+  margin-bottom: 0.5rem;
+}
+
+/* ILLUSTRATIONS -------------------- */
+
+.terminology .labels {
+  border-top: 0.125rem dotted var(--secondary-text-color);
+  border-left: 0.125rem dotted var(--secondary-text-color);
+  padding: 1.5rem;
+  position: relative;
+}
+
+.terminology .labels::after {
+  content:'main size';
+  display: inline-block;
+  background: white;
+  padding: 0.5rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.terminology .labels::before {
+  content:'cross size';
+  display: inline-block;
+  background: white;
+  padding: 0.5rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.terminology .flex-container {
+  background-color: var(--illustration-color-2);
+  display: flex;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.terminology .flex-container::before {
+  content: 'main axis';
+  border-bottom: 0.125rem solid var(--primary-color);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.terminology .flex-container::after {
+  content: 'cross axis';
+  border-left: 0.125rem solid var(--secondary-color);
+  position: absolute;
+  top: 0;
+  left: 75%;
+  padding-top: 1rem;
+  padding-left: 0.25rem;
+  height: 100%;
+}
+
+.terminology .flex-item {
+  background-color: var(--illustration-color-1);
+  padding: 1rem;
+  color: white;
+}
+
+.terminology .flex-item:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+/* UTILITIES -------------------- */
+
+.text-center {
+  text-align: center;
+}
