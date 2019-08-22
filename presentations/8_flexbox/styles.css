@@ -32,6 +32,10 @@ em {
   color: var(--primary-color);
 }
 
+li > ul {
+  margin-top: 1rem;
+}
+
 section {
   background-color: white;
   padding: 2rem;

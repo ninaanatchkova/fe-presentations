@@ -40,13 +40,13 @@
         <li>The elements can be of unknown or dynamic size</li>
         <li>A flex layout consists of a parent element — the <strong>flex container</strong> — and its children — <strong>the flex items</strong></li>
         <li>The flex layout gives the <strong>flex container</strong> the ability to alter its <strong>flex items</strong>'s width, height and order to best fill the available space</li>
-        <li>The flex layout is <strong>direction agnostic</strong>, as opposed to the block layout (vertically-based) and the inline layout (horizontally-based)</li>
+        <li>The flex layout is <strong>direction agnostic</strong>, as opposed to the block layout (vertically-based, like a <strong>column</strong>) and the inline layout (horizontally-based, like a <strong>row</strong>)</li>
       </ul>
     </section>
     <section>
       <h2>Terminology</h2>
       <ul>
-        <li>Unlike the <strong>CSS grid</strong> and other grid-based systems, the <strong>flex layout</strong> can be used to lay out items only along one dimension (row or column).</li>
+        <li>Unlike <strong>CSS Grid</strong> and other grid-based systems, the <strong>flex layout</strong> can be used to lay out items only along one dimension (row or column). It is a <strong>one-dimensional layout model</strong>.</li>
         <li>To achieve this, one of the two dimensions of the flex container becomes its <strong>main axis</strong> and the other dimension takes on a support role as its <strong>cross axis</strong>.</li>
       </ul>
       <h3>The flex container</h3>
@@ -108,7 +108,7 @@
     <section>
       <h2>The flex container</h2>
       <ul>
-        <li>To turn an element into a <strong>flex container</strong>, its <em>display</em> property should be set to <em>flex</em>.</li>
+        <li>To turn an element into a <strong>flex container</strong>, its <em>display</em> property should be set to <em>flex</em> or <em>inline-flex</em>. The <em>inline-flex</em> container behaves similarly to an <em>inline-block</em> element in the <strong>document flow</strong>, while the <em>flex</em> container behaves like a <em>block</em> level element.</li>
         <pre class="code-block">
           <code class="css">
             .container {
@@ -116,6 +116,17 @@
             }
           </code>
         </pre>
+        <li>When an element is converted to a <strong>flex container</strong>, all of its children (which have not been removed from the <strong>normal document flow</strong>) automatically become <strong>flex items</strong>.</li>
+        <li>The defaults applied to a <strong>flex container</strong> and its children are:
+          <ul>
+            <li>The flex items display in a row (<em>flex-direction: row</em>)</li>
+            <li>The flex items start from the start edge (<strong>main start</strong>) of the main axis</li>
+            <li>The flex items do not <strong>stretch</strong> to fill the length of the main dimension, but they can <strong>shrink</strong> to fit in it</li>
+            <li>The flex items <strong>stretch</strong> to fill the size of the cross axis.</li>
+            <li>The initial size of the flex items is just as much as is required to fit the content (<em>flex-basis: auto</em>)</li>
+            <li>All flex items are forced onto one line (<em>flex-wrap: nowrap</em>)</li>
+          </ul>
+        </li>
       </ul>
     </section>
   </main>
