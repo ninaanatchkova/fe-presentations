@@ -94,6 +94,14 @@ section li {
   flex-direction: column;
 }
 
+.flex-container.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-container.column-reverse {
+  flex-direction: column-reverse;
+}
+
 .terminology .flex-container::before,
 .flex-direction-overview .flex-container.row::before,
 .flex-direction-overview .flex-container.column::before {
@@ -144,8 +152,16 @@ section li {
   margin-right: 0.5rem;
 }
 
+.flex-container.row-reverse .flex-item:not(:last-child) {
+  margin-left: 0.5rem;
+}
+
 .flex-container.column .flex-item:not(:last-child) {
   margin-bottom: 0.5rem;
+}
+
+.flex-container.column-reverse .flex-item:not(:last-child) {
+  margin-top: 0.5rem;
 }
 
 .terminology .main-start, .terminology .main-end {
@@ -213,8 +229,17 @@ section li {
   justify-content: space-evenly;
 }
 
+.flex-direction-overview>div {
+  flex-grow: 1;
+}
+
 .flex-direction-overview>div:not(:last-child){
-  margin-right: 0.5rem;
+  margin-right: 1rem;
+}
+
+.flex-direction-overview .flex-container.column.column,
+.flex-direction-overview .flex-container.column-reverse {
+  min-height: 12rem;
 }
 
 /* UTILITIES -------------------- */

@@ -27,8 +27,12 @@
     </section>
     <section>
       <h2>Terminology</h2>
+      <ul>
+        <li>Unlike the <strong>CSS grid</strong> and other grid-based systems, the <strong>flex layout</strong> can be used to lay out items only along one dimension (row or column).</li>
+        <li>To achieve this, one of the two dimensions of the flex container becomes its <strong>main axis</strong> and the other dimension takes on a support role as its <strong>cross axis</strong>.</li>
+      </ul>
+      <h3>The flex container</h3>
       <div class="illustration terminology">
-        <p class="text-center">The flex container</p>
         <div class="labels">
           <div class="flex-container row">
             <div class="flex-item">flex item 1</div>
@@ -40,14 +44,21 @@
           </div>
         </div>
       </div>
+      <h3>Main axis</h3>
       <ul>
         <li>The <strong>main axis</strong> of the container is the <strong>primary</strong> axis along which the flex items are laid out</li>
-        <li>The <strong>direction</strong> of the <strong>main axis</strong> can be changed using the <em>flex-direction</em> property from <em>row</em> (horizontal) to <em>column</em> (vertical)</li>
+        <li>The <strong>main axis</strong> has a direction, which is delineated by the <strong>main start</strong> and <strong>main end</strong> of the container. By default it extends from the left side of the container to right.</li>
+        <li>The <strong>direction</strong> of the <strong>main axis</strong> can be changed using the <em>flex-direction</em> property from <em>row</em> (horizontal) to <em>column</em> (vertical). Other options are <em>row-reverse</em> and <em>column-reverse</em>.</li>
       </ul>
       <div class="illustration flex-direction-overview">
         <div>
           <p>Flex direction: row</p>
           <div class="flex-container row">
+            <div class="flex-item">flex item 1</div>
+            <div class="flex-item">flex item 2</div>
+          </div>
+          <p>Flex direction: row reverse</p>
+          <div class="flex-container row-reverse">
             <div class="flex-item">flex item 1</div>
             <div class="flex-item">flex item 2</div>
           </div>
@@ -58,8 +69,23 @@
             <div class="flex-item">flex item 1</div>
             <div class="flex-item">flex item 2</div>
           </div>
+          <p>Flex direction: column reverse</p>
+          <div class="flex-container column-reverse">
+            <div class="flex-item">flex item 1</div>
+            <div class="flex-item">flex item 2</div>
+          </div>
         </div>
       </div>
+      <ul>
+        <li><strong>Main start</strong> and <strong>main end</strong> are the starting and ending point of the container along the <strong>main axis</strong>. The flex items are placed along the <strong>main axis</strong> starting at <strong>main start</strong> and ending at <strong>main end</strong>.</li>
+        <li>The <strong>main size</strong> is the dimension of the container along the <strong>main axis</strong>. It could be the width or the height of the container, depending on the <em>flex-direction</em> of the container.</li>
+      </ul>
+      <h3>Cross axis</h3>
+      <ul>
+        <li>The cross axis is the axis perpendicular to the <strong>main axis</strong> of the flex container.</li>
+        <li>The <strong>cross start</strong> is the top side of the container for <em>flex-direction: row</em> and <em>flex-direction: row-reverse</em> and the left side of the container for <em>flex-direction: column</em> and <em>flex-direction: column-reverse</em>.</li>
+        <li>The <strong>cross size</strong> of the container is the dimension other than the dimension which is its <strong>main size</strong>.</li>
+      </ul>
     </section>
   </main>
 </body>
