@@ -107,6 +107,7 @@
     </section>
     <section>
       <h2>The flex container</h2>
+      <h3>The display property</h3>
       <ul>
         <li>To turn an element into a <strong>flex container</strong>, its <em>display</em> property should be set to <em>flex</em> or <em>inline-flex</em>. The <em>inline-flex</em> container behaves similarly to an <em>inline-block</em> element in the <strong>document flow</strong>, while the <em>flex</em> container behaves like a <em>block</em> level element.</li>
         <pre class="code-block">
@@ -128,6 +129,46 @@
           </ul>
         </li>
       </ul>
+    </section>
+    <section>
+      <h3>Flex direction</h3>
+      <ul>
+        <li>The <em>flex-direction</em> property establishes the <strong>main axis</strong> of the flex container</li>
+        <li>The directions of <em>row</em> and <em>row-reverse</em> depend on the direction of the HTML element (left-to-right: <em>ltr</em> or right-to-left: <em>rtl</em>). This can be set through the <em>dir</em> HTML attribute.</li>
+      </ul>
+      <pre class="code-block">
+          <code class="css">
+            .container {
+              flex-direction: row | row-reverse | column | column-reverse;
+            }
+          </code>
+        </pre>
+      <h3>Flex wrap</h3>
+      <ul>
+        <li>By default, the flex items are forced to fit onto one line</li>
+        <li>They can be allowed to wrap with the <em>wrap</em> or <em>wrap-reverse</em> options</li>
+      </ul>
+      <pre class="code-block">
+          <code class="css">
+            .container {
+              flex-wrap: nowrap | wrap | wrap-reverse;
+            }
+          </code>
+        </pre>
+      <h3>Flex flow</h3>
+      <ul>
+        <li>Shorthand for <em>flex-direction</em> and <em>flex-wrap</em></li>
+      </ul>
+      <pre class="code-block">
+          <code class="css">
+            .default-container {
+              flex-flow: row nowrap;
+            }
+            .custom-container {
+              flex-flow: column wrap-reverse;
+            }
+          </code>
+        </pre>
     </section>
   </main>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
