@@ -40,6 +40,7 @@
         <li><a href="#flex-direction">Flex direction</a></li>
         <li><a href="#justify-content">Justifying content along the main axis</a></li>
         <li><a href="#align-items">Aligning items along the cross axis</a></li>
+        <li><a href="#align-single-item">Aligning a single item along the cross axis</a></li>
       </ol>
       <p><a href="#top">^ Back to top</a></p>
     </div>
@@ -360,6 +361,7 @@
           </code>
         </pre>
       <div class="align-examples">
+        <h4>Flex direction: row</h4>
         <p><em>stretch</em></p>
         <div class="flex-container row stretch">
           <div class="flex-item">Everyday</div>
@@ -394,6 +396,74 @@
         </div>
         <p><em>baseline</em></p>
         <div class="flex-container row baseline">
+          <div class="flex-item">Everyday</div>
+          <div class="flex-item">Everyday I have the blues</div>
+          <div class="flex-item">Everyday</div>
+          <div class="flex-item">Everyday I have the blues</div>
+          <div class="flex-item">When you see me worryin' woman, honey, it's you I hate to lose</div>
+        </div>
+
+        <h4>Flex direction: column</h4>
+        <div class="vertical-examples">
+          <div class="flex-container column stretch">
+            <p><em>stretch</em></p>
+            <div class="flex-item">Everyday</div>
+            <div class="flex-item">Everyday I have the blues</div>
+            <div class="flex-item">Everyday</div>
+            <div class="flex-item">Everyday I have the blues</div>
+            <div class="flex-item">When you see me worryin' woman, honey, it's you I hate to lose</div>
+          </div>
+          <div class="flex-container column flex-start">
+            <p><em>flex-start</em></p>
+            <div class="flex-item">Everyday</div>
+            <div class="flex-item">Everyday I have the blues</div>
+            <div class="flex-item">Everyday</div>
+            <div class="flex-item">Everyday I have the blues</div>
+            <div class="flex-item">When you see me worryin' woman, honey, it's you I hate to lose</div>
+          </div>
+          <div class="flex-container column flex-end">
+            <p><em>flex-end</em></p>
+            <div class="flex-item">Everyday</div>
+            <div class="flex-item">Everyday I have the blues</div>
+            <div class="flex-item">Everyday</div>
+            <div class="flex-item">Everyday I have the blues</div>
+            <div class="flex-item">When you see me worryin' woman, honey, it's you I hate to lose</div>
+          </div>
+          <div class="flex-container column center">
+            <p><em>center</em></p>
+            <div class="flex-item">Everyday</div>
+            <div class="flex-item">Everyday I have the blues</div>
+            <div class="flex-item">Everyday</div>
+            <div class="flex-item">Everyday I have the blues</div>
+            <div class="flex-item">When you see me worryin' woman, honey, it's you I hate to lose</div>
+          </div>
+          <div class="flex-container column baseline">
+            <p><em>baseline</em></p>
+            <div class="flex-item">Everyday</div>
+            <div class="flex-item">Everyday I have the blues</div>
+            <div class="flex-item">Everyday</div>
+            <div class="flex-item">Everyday I have the blues</div>
+            <div class="flex-item">When you see me worryin' woman, honey, it's you I hate to lose</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="align-single-item">
+      <h3>Aligning a single item along the cross axis</h3>
+      <ul>
+        <li>Allows for the default alignment or the alignment set through <em>align-items</em> on the parent container
+          of a <strong>single flex element</strong> to be overriden</strong></li>
+      </ul>
+      <pre class="code-block">
+            <code class="css">
+                .item {
+                  align-self: auto | flex-start | flex-end |
+                  center | baseline | stretch;
+                }
+            </code>
+          </pre>
+      <div class="align-self-example">
+        <div class="flex-container row stretch">
           <div class="flex-item">Everyday</div>
           <div class="flex-item">Everyday I have the blues</div>
           <div class="flex-item">Everyday</div>

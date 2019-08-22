@@ -269,12 +269,14 @@ section li {
   min-height: 12rem;
 }
 
-.justify-examples .vertical-examples {
+.justify-examples .vertical-examples,
+.align-examples .vertical-examples {
   display: flex;
   flex-wrap: wrap;
 }
 
-.justify-examples .vertical-examples>div {
+.justify-examples .vertical-examples>div,
+.align-examples .vertical-examples>div {
   margin-right: 2rem;
 }
 
@@ -282,7 +284,7 @@ section li {
   margin-bottom: 1rem;
 }
 
-.justify-examples .flex-container.column {
+.justify-examples .flex-container.column,{
   height: 48rem;
   display: inline-flex;
   vertical-align: baseline;
@@ -338,6 +340,15 @@ section li {
 
 .align-examples .flex-container.baseline .flex-item:first-child {
   font-size: 1.5rem;
+}
+
+.align-self-example .flex-container{
+  height: 16rem;
+  align-items: flex-start;
+}
+
+.align-self-example .flex-container .flex-item:nth-child(4){
+  align-self: flex-end;
 }
 
 /* UTILITIES -------------------- */
