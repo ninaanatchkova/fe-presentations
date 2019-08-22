@@ -83,14 +83,20 @@ section li {
   transform: translate(-50%, -50%) rotate(-90deg);
 }
 
-.terminology .flex-container {
+.flex-container {
   background-color: var(--illustration-color-2);
   display: flex;
   padding: 1.5rem;
   position: relative;
 }
 
-.terminology .flex-container::before {
+.flex-container.column {
+  flex-direction: column;
+}
+
+.terminology .flex-container::before,
+.flex-direction-overview .flex-container.row::before,
+.flex-direction-overview .flex-container.column::before {
   content: 'main axis';
   color: var(--primary-color);
   border-bottom: 0.125rem solid var(--primary-color);
@@ -102,7 +108,15 @@ section li {
   text-align: center;
 }
 
-.terminology .flex-container::after {
+.flex-direction-overview .flex-container.column::before {
+  content: 'cross axis' !important;
+  color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+}
+
+.terminology .flex-container::after,
+.flex-direction-overview .flex-container.row::after,
+.flex-direction-overview .flex-container.column::after {
   content: 'cross axis';
   color: var(--secondary-color);
   border-left: 0.125rem solid var(--secondary-color);
@@ -114,14 +128,24 @@ section li {
   height: 100%;
 }
 
-.terminology .flex-item {
+.flex-direction-overview .flex-container.column::after {
+  content: 'main axis' !important;
+  color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.flex-item {
   background-color: var(--illustration-color-1);
   padding: 1rem;
   color: white;
 }
 
-.terminology .flex-item:not(:last-child) {
+.flex-container.row .flex-item:not(:last-child) {
   margin-right: 0.5rem;
+}
+
+.flex-container.column .flex-item:not(:last-child) {
+  margin-bottom: 0.5rem;
 }
 
 .terminology .main-start, .terminology .main-end {
@@ -182,6 +206,15 @@ section li {
 
 .terminology .cross-end {
   bottom: 0;
+}
+
+.flex-direction-overview {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.flex-direction-overview>div:not(:last-child){
+  margin-right: 0.5rem;
 }
 
 /* UTILITIES -------------------- */
