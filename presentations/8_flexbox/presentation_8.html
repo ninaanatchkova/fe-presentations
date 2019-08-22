@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,7 @@
   <title>Flexbox</title>
   <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
   <style>
     .hljs {
       background-color: snow;
@@ -26,21 +26,22 @@
     }
   </style>
 </head>
+
 <body>
   <aside>
     <div>
-    <h3>Table of contents</h3>
-    <ol>
-      <li>
-        <a href="#what-is">What is flexbox?</a>
-      </li>
-      <li><a href="#terminology">Terminology</a></li>
-      <li><a href="#flex-container">The Flex Container</a></li>
-      <li><a href="#flex-direction">Flex direction</a></li>
-      <li><a href="#justify-content">Justifying content along the main axis</a></li>
-      <li><a href=""></a></li>
-    </ol>
-    <p><a href="#top">^ Back to top</a></p>
+      <h3>Table of contents</h3>
+      <ol>
+        <li>
+          <a href="#what-is">What is flexbox?</a>
+        </li>
+        <li><a href="#terminology">Terminology</a></li>
+        <li><a href="#flex-container">The Flex Container</a></li>
+        <li><a href="#flex-direction">Flex direction</a></li>
+        <li><a href="#justify-content">Justifying content along the main axis</a></li>
+        <li><a href="#align-items">Aligning items along the cross axis</a></li>
+      </ol>
+      <p><a href="#top">^ Back to top</a></p>
     </div>
   </aside>
   <main>
@@ -52,18 +53,24 @@
     <section id="what-is">
       <h2>What is flexbox?</h2>
       <ul>
-        <li>The <strong>Flexible layout module</strong> aims at providing a more efficient way to lay out, align and distribute space among items in a container</li>
+        <li>The <strong>Flexible layout module</strong> aims at providing a more efficient way to lay out, align and
+          distribute space among items in a container</li>
         <li>The elements can be of unknown or dynamic size</li>
-        <li>A flex layout consists of a parent element — the <strong>flex container</strong> — and its children — <strong>the flex items</strong></li>
-        <li>The flex layout gives the <strong>flex container</strong> the ability to alter its <strong>flex items</strong>'s width, height and order to best fill the available space</li>
-        <li>The flex layout is <strong>direction agnostic</strong>, as opposed to the block layout (vertically-based, like a <strong>column</strong>) and the inline layout (horizontally-based, like a <strong>row</strong>)</li>
+        <li>A flex layout consists of a parent element — the <strong>flex container</strong> — and its children —
+          <strong>the flex items</strong></li>
+        <li>The flex layout gives the <strong>flex container</strong> the ability to alter its <strong>flex items</strong>'s
+          width, height and order to best fill the available space</li>
+        <li>The flex layout is <strong>direction agnostic</strong>, as opposed to the block layout (vertically-based,
+          like a <strong>column</strong>) and the inline layout (horizontally-based, like a <strong>row</strong>)</li>
       </ul>
     </section>
     <section id="terminology">
       <h2>Terminology</h2>
       <ul>
-        <li>Unlike <strong>CSS Grid</strong> and other grid-based systems, the <strong>flex layout</strong> can be used to lay out items only along one dimension (row or column). It is a <strong>one-dimensional layout model</strong>.</li>
-        <li>To achieve this, one of the two dimensions of the flex container becomes its <strong>main axis</strong> and the other dimension takes on a support role as its <strong>cross axis</strong>.</li>
+        <li>Unlike <strong>CSS Grid</strong> and other grid-based systems, the <strong>flex layout</strong> can be used
+          to lay out items only along one dimension (row or column). It is a <strong>one-dimensional layout model</strong>.</li>
+        <li>To achieve this, one of the two dimensions of the flex container becomes its <strong>main axis</strong> and
+          the other dimension takes on a support role as its <strong>cross axis</strong>.</li>
       </ul>
       <h3>The flex container</h3>
       <div class="illustration terminology">
@@ -80,9 +87,14 @@
       </div>
       <h3>Main axis</h3>
       <ul>
-        <li>The <strong>main axis</strong> of the container is the <strong>primary</strong> axis along which the flex items are laid out</li>
-        <li>The <strong>main axis</strong> has a direction, which is delineated by the <strong>main start</strong> and <strong>main end</strong> of the container. By default it extends from the left side of the container to right.</li>
-        <li>The <strong>direction</strong> of the <strong>main axis</strong> can be changed using the <em>flex-direction</em> property from <em>row</em> (horizontal) to <em>column</em> (vertical). Other options are <em>row-reverse</em> and <em>column-reverse</em>.</li>
+        <li>The <strong>main axis</strong> of the container is the <strong>primary</strong> axis along which the flex
+          items are laid out</li>
+        <li>The <strong>main axis</strong> has a direction, which is delineated by the <strong>main start</strong> and
+          <strong>main end</strong> of the container. By default it extends from the left side of the container to
+          right.</li>
+        <li>The <strong>direction</strong> of the <strong>main axis</strong> can be changed using the <em>flex-direction</em>
+          property from <em>row</em> (horizontal) to <em>column</em> (vertical). Other options are <em>row-reverse</em>
+          and <em>column-reverse</em>.</li>
       </ul>
       <div class="illustration flex-direction-overview">
         <div>
@@ -111,21 +123,30 @@
         </div>
       </div>
       <ul>
-        <li><strong>Main start</strong> and <strong>main end</strong> are the starting and ending point of the container along the <strong>main axis</strong>. The flex items are placed along the <strong>main axis</strong> starting at <strong>main start</strong> and ending at <strong>main end</strong>.</li>
-        <li>The <strong>main size</strong> is the dimension of the container along the <strong>main axis</strong>. It could be the width or the height of the container, depending on the <em>flex-direction</em> of the container.</li>
+        <li><strong>Main start</strong> and <strong>main end</strong> are the starting and ending point of the
+          container along the <strong>main axis</strong>. The flex items are placed along the <strong>main axis</strong>
+          starting at <strong>main start</strong> and ending at <strong>main end</strong>.</li>
+        <li>The <strong>main size</strong> is the dimension of the container along the <strong>main axis</strong>. It
+          could be the width or the height of the container, depending on the <em>flex-direction</em> of the container.</li>
       </ul>
       <h3>Cross axis</h3>
       <ul>
         <li>The cross axis is the axis perpendicular to the <strong>main axis</strong> of the flex container.</li>
-        <li>The <strong>cross start</strong> is the top side of the container for <em>flex-direction: row</em> and <em>flex-direction: row-reverse</em> and the left side of the container for <em>flex-direction: column</em> and <em>flex-direction: column-reverse</em>.</li>
-        <li>The <strong>cross size</strong> of the container is the dimension other than the dimension which is its <strong>main size</strong>.</li>
+        <li>The <strong>cross start</strong> is the top side of the container for <em>flex-direction: row</em> and <em>flex-direction:
+            row-reverse</em> and the left side of the container for <em>flex-direction: column</em> and <em>flex-direction:
+            column-reverse</em>.</li>
+        <li>The <strong>cross size</strong> of the container is the dimension other than the dimension which is its
+          <strong>main size</strong>.</li>
       </ul>
     </section>
     <section id="flex-container">
       <h2>The flex container</h2>
       <h3>The display property</h3>
       <ul>
-        <li>To turn an element into a <strong>flex container</strong>, its <em>display</em> property should be set to <em>flex</em> or <em>inline-flex</em>. The <em>inline-flex</em> container behaves similarly to an <em>inline-block</em> element in the <strong>document flow</strong>, while the <em>flex</em> container behaves like a <em>block</em> level element.</li>
+        <li>To turn an element into a <strong>flex container</strong>, its <em>display</em> property should be set to
+          <em>flex</em> or <em>inline-flex</em>. The <em>inline-flex</em> container behaves similarly to an <em>inline-block</em>
+          element in the <strong>document flow</strong>, while the <em>flex</em> container behaves like a <em>block</em>
+          level element.</li>
         <pre class="code-block">
           <code class="css">
             .container {
@@ -133,14 +154,17 @@
             }
           </code>
         </pre>
-        <li>When an element is converted to a <strong>flex container</strong>, all of its children (which have not been removed from the <strong>normal document flow</strong>) automatically become <strong>flex items</strong>.</li>
+        <li>When an element is converted to a <strong>flex container</strong>, all of its children (which have not been
+          removed from the <strong>normal document flow</strong>) automatically become <strong>flex items</strong>.</li>
         <li>The defaults applied to a <strong>flex container</strong> and its children are:
           <ul>
             <li>The flex items display in a row (<em>flex-direction: row</em>)</li>
             <li>The flex items start from the start edge (<strong>main start</strong>) of the main axis</li>
-            <li>The flex items do not <strong>stretch</strong> to fill the length of the main dimension, but they can <strong>shrink</strong> to fit in it</li>
+            <li>The flex items do not <strong>stretch</strong> to fill the length of the main dimension, but they can
+              <strong>shrink</strong> to fit in it</li>
             <li>The flex items <strong>stretch</strong> to fill the size of the cross axis.</li>
-            <li>The initial size of the flex items is just as much as is required to fit the content (<em>flex-basis: auto</em>)</li>
+            <li>The initial size of the flex items is just as much as is required to fit the content (<em>flex-basis:
+                auto</em>)</li>
             <li>All flex items are forced onto one line (<em>flex-wrap: nowrap</em>)</li>
           </ul>
         </li>
@@ -150,7 +174,9 @@
       <h3>Flex direction</h3>
       <ul>
         <li>The <em>flex-direction</em> property establishes the <strong>main axis</strong> of the flex container</li>
-        <li>The directions of <em>row</em> and <em>row-reverse</em> depend on the direction of the HTML element (left-to-right: <em>ltr</em> or right-to-left: <em>rtl</em>). This can be set through the <em>dir</em> HTML attribute.</li>
+        <li>The directions of <em>row</em> and <em>row-reverse</em> depend on the direction of the HTML element
+          (left-to-right: <em>ltr</em> or right-to-left: <em>rtl</em>). This can be set through the <em>dir</em> HTML
+          attribute.</li>
       </ul>
       <pre class="code-block">
           <code class="css">
@@ -260,63 +286,119 @@
           </div>
           <h4>Flex direction: column</h4>
           <div class="vertical-examples">
-          <div class="flex-container column flex-start">
-            <p><em>flex-start</em></p>
-            <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
-          </div>
-          <div class="flex-container column flex-end">
-            <p><em>flex-end</em></p>
-            <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
-          </div>
-          <div class="flex-container column center">
-            <p><em>center</em></p>
-            <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
-          </div>
-          <div class="flex-container column space-around">
-            <p><em>space-around</em></p>
-            <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
-          </div>
-          <div class="flex-container column space-between">
-            <p><em>space-between</em></p>
-            <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
-          </div>
-          <div class="flex-container column space-evenly">
-            <p><em>space-evenly</em></p>
-            <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
-            <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
-          </div>
-          <div class="flex-container column space-evenly">
-            <p><em>space-evenly</em></p>
-            <div class="flex-item">Everyday</div>
-            <div class="flex-item">Everyday I have the blues</div>
-            <div class="flex-item">Everyday</div>
-            <div class="flex-item">Everyday I have the blues</div>
-            <div class="flex-item">When you see me worryin' woman, honey, it's you I hate to lose</div>
+            <div class="flex-container column flex-start">
+              <p><em>flex-start</em></p>
+              <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
+            </div>
+            <div class="flex-container column flex-end">
+              <p><em>flex-end</em></p>
+              <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
+            </div>
+            <div class="flex-container column center">
+              <p><em>center</em></p>
+              <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
+            </div>
+            <div class="flex-container column space-around">
+              <p><em>space-around</em></p>
+              <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
+            </div>
+            <div class="flex-container column space-between">
+              <p><em>space-between</em></p>
+              <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
+            </div>
+            <div class="flex-container column space-evenly">
+              <p><em>space-evenly</em></p>
+              <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
+            </div>
+            <div class="flex-container column space-evenly">
+              <p><em>space-evenly</em></p>
+              <div class="flex-item">Everyday</div>
+              <div class="flex-item">Everyday I have the blues</div>
+              <div class="flex-item">Everyday</div>
+              <div class="flex-item">Everyday I have the blues</div>
+              <div class="flex-item">When you see me worryin' woman, honey, it's you I hate to lose</div>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
+    <section id="align-items">
+      <h3>Aligning items along the cross axis</h3>
+      <ul>
+        <li>Specifies what amount of space each <strong>flex item</strong> should take along the <strong>cross axis</strong></li>
+      </ul>
+      <pre class="code-block">
+          <code class="css">
+            .container {
+              align-items: stretch | flex-start | flex-end |
+              center | baseline;
+            }
+          </code>
+        </pre>
+      <div class="align-examples">
+        <p><em>stretch</em></p>
+        <div class="flex-container row stretch">
+          <div class="flex-item">Everyday</div>
+          <div class="flex-item">Everyday I have the blues</div>
+          <div class="flex-item">Everyday</div>
+          <div class="flex-item">Everyday I have the blues</div>
+          <div class="flex-item">When you see me worryin' woman, honey, it's you I hate to lose</div>
+        </div>
+        <p><em>flex-start</em></p>
+        <div class="flex-container row flex-start">
+          <div class="flex-item">Everyday</div>
+          <div class="flex-item">Everyday I have the blues</div>
+          <div class="flex-item">Everyday</div>
+          <div class="flex-item">Everyday I have the blues</div>
+          <div class="flex-item">When you see me worryin' woman, honey, it's you I hate to lose</div>
+        </div>
+        <p><em>flex-end</em></p>
+        <div class="flex-container row flex-end">
+          <div class="flex-item">Everyday</div>
+          <div class="flex-item">Everyday I have the blues</div>
+          <div class="flex-item">Everyday</div>
+          <div class="flex-item">Everyday I have the blues</div>
+          <div class="flex-item">When you see me worryin' woman, honey, it's you I hate to lose</div>
+        </div>
+        <p><em>center</em></p>
+        <div class="flex-container row center">
+          <div class="flex-item">Everyday</div>
+          <div class="flex-item">Everyday I have the blues</div>
+          <div class="flex-item">Everyday</div>
+          <div class="flex-item">Everyday I have the blues</div>
+          <div class="flex-item">When you see me worryin' woman, honey, it's you I hate to lose</div>
+        </div>
+        <p><em>baseline</em></p>
+        <div class="flex-container row baseline">
+          <div class="flex-item">Everyday</div>
+          <div class="flex-item">Everyday I have the blues</div>
+          <div class="flex-item">Everyday</div>
+          <div class="flex-item">Everyday I have the blues</div>
+          <div class="flex-item">When you see me worryin' woman, honey, it's you I hate to lose</div>
         </div>
       </div>
     </section>
@@ -324,4 +406,5 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
   <script src="scripts.js"></script>
 </body>
+
 </html>

@@ -312,6 +312,34 @@ section li {
   justify-content: space-evenly;
 }
 
+.align-examples .flex-container {
+  margin-bottom: 1rem;
+}
+
+.align-examples .flex-container.stretch {
+  align-items: stretch;
+}
+
+.align-examples .flex-container.flex-start {
+  align-items: flex-start;
+}
+
+.align-examples .flex-container.flex-end {
+  align-items: flex-end;
+}
+
+.align-examples .flex-container.center {
+  align-items: center;
+}
+
+.align-examples .flex-container.baseline {
+  align-items: baseline;
+}
+
+.align-examples .flex-container.baseline .flex-item:first-child {
+  font-size: 1.5rem;
+}
+
 /* UTILITIES -------------------- */
 
 .text-center {
