@@ -22,6 +22,29 @@ html {
 body {
   background-color: var(--background-color);
   padding: 2.5vw;
+  display: flex;
+}
+
+aside {
+  margin-right: 1rem;
+  font-size: 0.75rem;
+  flex: 8rem 1 0;
+}
+
+aside > div {
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+aside li {
+  margin-bottom: 0.5rem;
 }
 
 em {

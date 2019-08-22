@@ -27,13 +27,29 @@
   </style>
 </head>
 <body>
+  <aside>
+    <div>
+    <h3>Table of contents</h3>
+    <ol>
+      <li>
+        <a href="#what-is">What is flexbox?</a>
+      </li>
+      <li><a href="#terminology">Terminology</a></li>
+      <li><a href="#flex-container">The Flex Container</a></li>
+      <li><a href="#flex-direction">Flex direction</a></li>
+      <li><a href="#justify-content">Justifying content along the main axis</a></li>
+      <li><a href=""></a></li>
+    </ol>
+    <p><a href="#top">^ Back to top</a></p>
+    </div>
+  </aside>
   <main>
-    <section>
+    <section id="top">
       <header class="page-header">
         <h1>Flexbox</h1>
       </header>
     </section>
-    <section>
+    <section id="what-is">
       <h2>What is flexbox?</h2>
       <ul>
         <li>The <strong>Flexible layout module</strong> aims at providing a more efficient way to lay out, align and distribute space among items in a container</li>
@@ -43,7 +59,7 @@
         <li>The flex layout is <strong>direction agnostic</strong>, as opposed to the block layout (vertically-based, like a <strong>column</strong>) and the inline layout (horizontally-based, like a <strong>row</strong>)</li>
       </ul>
     </section>
-    <section>
+    <section id="terminology">
       <h2>Terminology</h2>
       <ul>
         <li>Unlike <strong>CSS Grid</strong> and other grid-based systems, the <strong>flex layout</strong> can be used to lay out items only along one dimension (row or column). It is a <strong>one-dimensional layout model</strong>.</li>
@@ -105,7 +121,7 @@
         <li>The <strong>cross size</strong> of the container is the dimension other than the dimension which is its <strong>main size</strong>.</li>
       </ul>
     </section>
-    <section>
+    <section id="flex-container">
       <h2>The flex container</h2>
       <h3>The display property</h3>
       <ul>
@@ -130,7 +146,7 @@
         </li>
       </ul>
     </section>
-    <section>
+    <section id="flex-direction">
       <h3>Flex direction</h3>
       <ul>
         <li>The <em>flex-direction</em> property establishes the <strong>main axis</strong> of the flex container</li>
@@ -170,7 +186,7 @@
           </code>
         </pre>
     </section>
-    <section>
+    <section id="justify-content">
       <h3>Justifying content along the main axis</h3>
       <ul>
         <li>Used to distribute the space between the elements in the flex container</li>
