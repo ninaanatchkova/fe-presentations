@@ -25,7 +25,7 @@ body {
 }
 
 em {
-  font-family: 'Ubuntu Mono';
+  font-family: 'Ubuntu Mono', monospace;
   font-style: normal;
   letter-spacing: 0.125ch;
   padding: 0 0.125rem;
@@ -244,6 +244,49 @@ section li {
 .flex-direction-overview .flex-container.column.column,
 .flex-direction-overview .flex-container.column-reverse {
   min-height: 12rem;
+}
+
+.justify-examples .vertical-examples {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.justify-examples .vertical-examples>div {
+  margin-right: 2rem;
+}
+
+.justify-examples .flex-container {
+  margin-bottom: 1rem;
+}
+
+.justify-examples .flex-container.column {
+  height: 48rem;
+  display: inline-flex;
+  vertical-align: baseline;
+}
+
+.justify-examples .flex-container.flex-start {
+  justify-content: flex-start;
+}
+
+.justify-examples .flex-container.flex-end {
+  justify-content: flex-end;
+}
+
+.justify-examples .flex-container.center {
+  justify-content: center;
+}
+
+.justify-examples .flex-container.space-around {
+  justify-content: space-around;
+}
+
+.justify-examples .flex-container.space-between {
+  justify-content: space-between;
+}
+
+.justify-examples .flex-container.space-evenly {
+  justify-content: space-evenly;
 }
 
 /* UTILITIES -------------------- */
