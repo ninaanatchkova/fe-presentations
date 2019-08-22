@@ -24,6 +24,14 @@ body {
   padding: 2.5vw;
 }
 
+em {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  letter-spacing: 0.125ch;
+  padding: 0 0.125rem;
+  color: var(--primary-color);
+}
+
 section {
   background-color: white;
   padding: 2rem;
@@ -36,15 +44,20 @@ section h2 {
 }
 
 section li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.5em;
 }
 
 /* ILLUSTRATIONS -------------------- */
 
+.illustration {
+  margin-bottom: 2rem;
+}
+
 .terminology .labels {
   border-top: 0.125rem dotted var(--secondary-text-color);
   border-left: 0.125rem dotted var(--secondary-text-color);
-  padding: 1.5rem;
+  padding: 2rem;
   position: relative;
 }
 
@@ -79,6 +92,7 @@ section li {
 
 .terminology .flex-container::before {
   content: 'main axis';
+  color: var(--primary-color);
   border-bottom: 0.125rem solid var(--primary-color);
   position: absolute;
   top: 50%;
@@ -90,6 +104,7 @@ section li {
 
 .terminology .flex-container::after {
   content: 'cross axis';
+  color: var(--secondary-color);
   border-left: 0.125rem solid var(--secondary-color);
   position: absolute;
   top: 0;
@@ -107,6 +122,66 @@ section li {
 
 .terminology .flex-item:not(:last-child) {
   margin-right: 0.5rem;
+}
+
+.terminology .main-start, .terminology .main-end {
+  position: absolute;
+  top: 115%;
+  color: var(--primary-color);
+}
+
+.terminology .main-start::before, .terminology .main-end::before {
+  content: '';
+  position: absolute;;
+  height: 100%;
+  top: -100%;
+  border-left: 0.125rem dotted var(--primary-color);
+}
+
+.terminology .cross-start, .terminology .cross-end {
+  position: absolute;
+  left: 102%;
+  color: var(--secondary-color);
+}
+
+.terminology .cross-start::before, .terminology .cross-end::before {
+  content: '';
+  position: absolute;;
+  width: 50%;
+  left: -50%;
+  border-bottom: 0.125rem dotted var(--secondary-color);
+}
+
+.terminology .main-start::before {
+  left: 0;
+}
+
+.terminology .main-end::before {
+  right: 0;
+}
+
+.terminology .cross-start::before {
+  top: 0;
+}
+
+.terminology .cross-end::before {
+  bottom: 0;
+}
+
+.terminology .main-start {
+  left: 0;
+}
+
+.terminology .main-end {
+  right: 0;
+}
+
+.terminology .cross-start {
+  top: 0;
+}
+
+.terminology .cross-end {
+  bottom: 0;
 }
 
 /* UTILITIES -------------------- */
