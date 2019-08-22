@@ -269,6 +269,10 @@ section li {
   min-height: 12rem;
 }
 
+.justify-examples .vertical-examples .flex-container {
+  height: 48rem;
+}
+
 .justify-examples .vertical-examples,
 .align-examples .vertical-examples {
   display: flex;
