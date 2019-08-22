@@ -7,6 +7,24 @@
   <title>Flexbox</title>
   <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">
+  <style>
+    .hljs {
+      background-color: snow;
+      font-family: 'Ubuntu Mono';
+      line-height: 1.5em;
+      color: var(--primary-text-color);
+    }
+
+    .hljs-selector-class {
+      color: var(--primary-color);
+    }
+
+    .hljs-comment {
+      color: var(--secondary-color);
+    }
+  </style>
 </head>
 <body>
   <main>
@@ -87,6 +105,21 @@
         <li>The <strong>cross size</strong> of the container is the dimension other than the dimension which is its <strong>main size</strong>.</li>
       </ul>
     </section>
+    <section>
+      <h2>The flex container</h2>
+      <ul>
+        <li>To turn an element into a <strong>flex container</strong>, its <em>display</em> property should be set to <em>flex</em>.</li>
+        <pre class="code-block">
+          <code class="css">
+            .container {
+              display: flex; /* or inline-flex */
+            }
+          </code>
+        </pre>
+      </ul>
+    </section>
   </main>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
