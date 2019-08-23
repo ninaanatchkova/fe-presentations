@@ -42,6 +42,7 @@
         <li><a href="#align-items">Aligning items along the cross axis</a></li>
         <li><a href="#align-single-item">Aligning a single item along the cross axis</a></li>
         <li><a href="#aligning-content">Aligning multiple lines of content along the cross axis</a></li>
+        <li><a href="#flex-order">Ordering flex items</a></li>
       </ol>
       <p><a href="#top">^ Back to top</a></p>
     </div>
@@ -653,7 +654,24 @@
       </div>
         
     </section>
-    <section></section>
+    <section id="flex-order">
+      <h3>Ordering flex items</h3>
+      <ul>
+        <li>The flex items normally follow the order in which they are declared inside the flex container</li>
+        <li>They can be reordered using the <em>order</em> property</li>
+        <li>The <em>order</em> property accepts positive or negative integer numbers. The default value is <em>0</em>.</li>
+        <li>The items are ordered in order of their <em>order</em> property</li>
+        <li>The smaller the number, the closer the item is to the <strong>main start</strong> of the container, and the larger it is, the closer it is to the <strong>main end</strong>.</li>
+      </ul>
+      <div class="flex-order-examples">
+        <div class="flex-container row">
+          <div class="flex-item">flex item 1, <em>order: 22</em></div>
+          <div class="flex-item">flex item 2, <em>order: -1</em></div>
+          <div class="flex-item">flex item 3, default <em>order</em></div>
+          <div class="flex-item">flex item 4, <em>order: 3</em></div>
+        </div>
+      </div>
+    </section>
   </main>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
   <script src="scripts.js"></script>

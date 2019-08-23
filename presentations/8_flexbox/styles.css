@@ -384,6 +384,18 @@ section li {
   align-content: stretch;
 }
 
+.flex-order-examples .flex-item:nth-child(1) {
+  order: 22;
+}
+
+.flex-order-examples .flex-item:nth-child(2) {
+  order: -1;
+}
+
+.flex-order-examples .flex-item:nth-child(4) {
+  order: 3;
+}
+
 /* UTILITIES -------------------- */
 
 .text-center {
