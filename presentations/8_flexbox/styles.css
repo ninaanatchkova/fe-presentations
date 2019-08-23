@@ -396,6 +396,14 @@ section li {
   order: 3;
 }
 
+.flex-grow-examples .aside {
+  flex: 0 0 8rem;
+}
+
+.flex-grow-examples .main {
+  flex: 1 1 auto;
+}
+
 /* UTILITIES -------------------- */
 
 .text-center {

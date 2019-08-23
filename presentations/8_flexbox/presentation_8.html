@@ -24,6 +24,14 @@
     .hljs-comment {
       color: var(--secondary-color);
     }
+
+    .hljs-number {
+      color: var(--illustration-color-1);
+    }
+
+    .hljs-selector-pseudo {
+      color: var(--illustration-color-2);
+    }
   </style>
 </head>
 
@@ -43,6 +51,7 @@
         <li><a href="#align-single-item">Aligning a single item along the cross axis</a></li>
         <li><a href="#aligning-content">Aligning multiple lines of content along the cross axis</a></li>
         <li><a href="#flex-order">Ordering flex items</a></li>
+        <li><a href="#distributing-space">Distributing space to flex items</a></li>
       </ol>
       <p><a href="#top">^ Back to top</a></p>
     </div>
@@ -663,12 +672,72 @@
         <li>The items are ordered in order of their <em>order</em> property</li>
         <li>The smaller the number, the closer the item is to the <strong>main start</strong> of the container, and the larger it is, the closer it is to the <strong>main end</strong>.</li>
       </ul>
+      <pre class="code-block">
+          <code class="css">
+            .item:nth-child(1) {
+              order: 22; /* integer, default is 0 */
+            }
+            .item:nth-child(2) {
+              order: -1;
+            }
+            .item:nth-child(4) {
+              order: 3;
+            }
+          </code>
+        </pre>
       <div class="flex-order-examples">
         <div class="flex-container row">
           <div class="flex-item">flex item 1, <em>order: 22</em></div>
           <div class="flex-item">flex item 2, <em>order: -1</em></div>
           <div class="flex-item">flex item 3, default <em>order</em></div>
           <div class="flex-item">flex item 4, <em>order: 3</em></div>
+        </div>
+      </div>
+    </section>
+    <section id="distributing-space">
+      <h3>Distributing space to flex items</h3>
+      <ul>
+        <li>The way an item resizes to fit or fill available space along the main axis can be controlled with the <em>flex-grow</em>, <em>flex-shrink</em> and <em>flex-basis</em> properties.</li>
+        <li>The <em>flex-basis</em> property defines the default size along the main axis (i.e. width or height) of the element before the remaining space is distributed.</li>
+        <li>The <em>flex-grow</em> property defines the ability of an item to <strong>grow</strong> if space is available. It accepts a positive integer value, and its default value is <em>0</em>.</li>
+        <li>The amount of space distributed to each item through flex grow is in proportion of its <em>flex-grow</em> property</li>
+        <li>The <em>flex-shrink</em> property defines the ability of a flex item to <strong>shrink</strong> if necessary. By default its value is <em>0</em>. Like <em>flex-grow</em>, it is also proportionate.</li>
+      </ul>
+      <pre class="code-block">
+          <code class="css">
+            .default-item {
+              flex-basis: auto;
+              flex-grow: 0;
+              flex-shrink: 1;
+            }
+          </code>
+        </pre>
+      <ul>
+        <li>The properties <em>flex-basis</em>, <em>flex-grow</em> and <em>flex-shrink</em> can be combined in the <em>flex</em> <strong>shorthand</strong> property.</li>
+      </ul>
+      <pre class="code-block">
+          <code class="css">
+            .aside {
+              /* flex-grow flex-shrink flex-basis*/
+              flex: 0 0 8rem; 
+            }
+            .main {
+              flex: 1 1 auto;
+            }
+          </code>
+        </pre>
+        <div class="flex-grow-examples">
+        <div class="flex-container row">
+          <div class="aside flex-item">
+            <p><em>.aside</em></p>
+            <h4>Every day I have the blues</h4>
+            <p>By B.B. King</p>
+          </div>
+          <div class="main flex-item">
+            <p><em>.main</em></p>
+            <p>Everyday<br>Everyday I have the blues<br>Everyday<br>Everyday I have the blues<br>When you see me worryin' woman,<br>honey, it's you I hate to lose</p>
+            <p>Nobody loves me<br>Nobody seems to care<br>Yes, nobody loves me<br>Nobody seems to care<br>Speaking of worries and trouble darling,<br>you know I've had my share</p>
+          </div>
         </div>
       </div>
     </section>
