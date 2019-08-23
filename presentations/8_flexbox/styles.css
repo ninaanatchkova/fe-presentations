@@ -288,7 +288,7 @@ section li {
   margin-bottom: 1rem;
 }
 
-.justify-examples .flex-container.column,{
+.justify-examples .flex-container.column {
   height: 48rem;
   display: inline-flex;
   vertical-align: baseline;
@@ -353,6 +353,35 @@ section li {
 
 .align-self-example .flex-container .flex-item:nth-child(4){
   align-self: flex-end;
+}
+
+.align-items-examples .flex-container {
+  flex-wrap: wrap;
+  height: 24rem;
+}
+
+.align-items-examples .flex-container.flex-start {
+  align-content: flex-start;
+}
+
+.align-items-examples .flex-container.flex-end {
+  align-content: flex-end;
+}
+
+.align-items-examples .flex-container.center {
+  align-content: center;
+}
+
+.align-items-examples .flex-container.space-between {
+  align-content: space-between;
+}
+
+.align-items-examples .flex-container.space-around {
+  align-content: space-around;
+}
+
+.align-items-examples .flex-container.stretch {
+  align-content: stretch;
 }
 
 /* UTILITIES -------------------- */

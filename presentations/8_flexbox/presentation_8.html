@@ -41,6 +41,7 @@
         <li><a href="#justify-content">Justifying content along the main axis</a></li>
         <li><a href="#align-items">Aligning items along the cross axis</a></li>
         <li><a href="#align-single-item">Aligning a single item along the cross axis</a></li>
+        <li><a href="#aligning-content">Aligning multiple lines of content along the cross axis</a></li>
       </ol>
       <p><a href="#top">^ Back to top</a></p>
     </div>
@@ -472,6 +473,187 @@
         </div>
       </div>
     </section>
+    <section id="aligning-content">
+      <h3>Aligning multiple lines of content along the cross axis</h3>
+      <ul>
+        <li>The <em>align-content</em> property only takes effect when the flex items have wrapped onto multiple lines</li>
+        <li>The <em>align-content</em> property distributes the remaining free space along the cross axis when there are multiple lines of items</li>
+      </ul>
+      <pre class="code-block">
+        <code class="css">
+            .container {
+              align-content: flex-start | flex-end | center |
+              space-between | space-around | stretch;
+            }
+        </code>
+      </pre>
+      <div class="align-items-examples">
+        <div>
+          <h4>Flex direction: row</h4>
+          <p><em>flex-start</em></p>
+          <div class="flex-container row flex-start">
+            <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/105/95" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/140/120" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/90/130" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/100/80" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/90/100" alt="" srcset=""></div>
+          </div>
+          <p><em>flex-end</em></p>
+          <div class="flex-container row flex-end">
+            <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/105/95" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/140/120" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/90/130" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/100/80" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/90/100" alt="" srcset=""></div>
+          </div>
+          <p><em>center</em></p>
+          <div class="flex-container row center">
+            <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/105/95" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/140/120" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/90/130" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/100/80" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/90/100" alt="" srcset=""></div>
+          </div>
+          <p><em>space-between</em></p>
+          <div class="flex-container row space-between">
+            <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/105/95" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/140/120" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/90/130" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/100/80" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/90/100" alt="" srcset=""></div>
+          </div>
+          <p><em>space-around</em></p>
+          <div class="flex-container row space-around">
+            <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/105/95" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/140/120" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/90/130" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/100/80" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/90/100" alt="" srcset=""></div>
+          </div>
+          <p><em>stretch</em></p>
+          <div class="flex-container row stretch">
+            <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/105/95" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/140/120" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/90/130" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/100/80" alt="" srcset=""></div>
+            <div class="flex-item"><img src="https://placekitten.com/90/100" alt="" srcset=""></div>
+          </div>
+          <h4>Flex direction: column</h4>
+          <div class="vertical-examples">
+            <p><em>flex-start</em></p>
+            <div class="flex-container column flex-start">
+              <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/105/95" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/140/120" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/130" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/100/80" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/100" alt="" srcset=""></div>
+            </div>
+            <p><em>flex-end</em></p>
+            <div class="flex-container column flex-end">
+              <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/105/95" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/140/120" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/130" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/100/80" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/100" alt="" srcset=""></div>
+            </div>
+            <p><em>center</em></p>
+            <div class="flex-container column center">
+              <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/105/95" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/140/120" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/130" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/100/80" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/100" alt="" srcset=""></div>
+            </div>
+            <p><em>space-between</em></p>
+            <div class="flex-container column space-between">
+              <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/105/95" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/140/120" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/130" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/100/80" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/100" alt="" srcset=""></div>
+            </div>
+            <p><em>space-around</em></p>
+            <div class="flex-container column space-around">
+              <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/105/95" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/140/120" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/130" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/100/80" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/100" alt="" srcset=""></div>
+            </div>
+            <p><em>stretch</em></p>
+            <div class="flex-container column stretch">
+              <div class="flex-item"><img src="https://placekitten.com/100/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/130/100" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/120" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/100/75" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/80/110" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/105/95" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/140/120" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/130" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/100/80" alt="" srcset=""></div>
+              <div class="flex-item"><img src="https://placekitten.com/90/100" alt="" srcset=""></div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+    </section>
+    <section></section>
   </main>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
   <script src="scripts.js"></script>
